@@ -1,0 +1,162 @@
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arvo {
+  font-family: "Arvo", serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: capitalize;
+}
+
+body {
+  margin: 0;
+}
+
+.title-flexbox-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title-flexbox-container::after {
+  opacity: 0.8;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(./images/hotel.jpg);
+  background-size: cover;
+  z-index: -1;
+}
+
+.title-flexbox-container h1 {
+  font-size: 3rem;
+}
+
+.title-flexbox-container p {
+  font-size: 1.5rem;
+}
+
+.features-inner-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features-inner-container img{
+  border-radius: 2rem 0 2rem 0;
+}
+
+.features-grid-container{
+  padding: 3rem 0 0;
+  background-color: #F3F3E0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.first{
+  grid-column: 1/3;
+}
+
+.second{
+  grid-row: 2/3;
+  grid-column: 2/-1;
+}
+
+.third{
+  grid-row: 3/-1;
+  grid-column: 1/3;
+}
+
+.features-text-part{
+  width: 40%;
+}
+
+.features-text-part p{
+  width: 100%;
+}
+
+.contact-grid-container{
+  padding-top: 4rem;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,150px);
+}
+
+.contact-grid-container::after{
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(./images/beach.jpg);
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.contact-grid-container h3{
+  margin-top: 0;
+}
+
+.contact-grid-container div{
+  margin-right: 1rem;
+}
+
+.first-contact{
+  grid-column: 3/-1;
+}
+
+.second-contact{
+  grid-column: 3/-1;
+}
+
+.third-contact{
+  grid-column: 3/-1;
+}
+
+.logo{
+  margin-left: 2rem;
+}
+
+@media(max-width:768px){
+  .features-grid-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,1fr);
+    gap: 3rem;
+  }
+
+  .second{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+
+  .first{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+
+  .third{
+    grid-row: 3/4;
+    grid-column: 1/-1;
+  }
+
+  .features-text-part{
+    width: 60%;
+  }
+
+  .features-inner-container img{
+    width: 60%;
+  }
+}
